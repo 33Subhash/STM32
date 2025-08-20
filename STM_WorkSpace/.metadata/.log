@@ -1371,3 +1371,9 @@ java.lang.Exception: Resource '/15_SPI_Polling' does not exist.
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-08-20 12:11:33.327
 !MESSAGE Indexed '18_SPI_DMA' (25 sources, 106 headers) in 1.72 sec: 10,384 declarations; 47,908 references; 7 unresolved inclusions; 650 syntax errors; 2,912 unresolved names (4.8%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-20 14:13:26.985
+!MESSAGE Indexed '19_I2C' (31 sources, 117 headers) in 2.38 sec: 13,506 declarations; 88,523 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0.17%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-20 15:03:23.395
+!MESSAGE Indexed '20_RTC' (31 sources, 117 headers) in 2.27 sec: 13,506 declarations; 88,523 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0.17%)

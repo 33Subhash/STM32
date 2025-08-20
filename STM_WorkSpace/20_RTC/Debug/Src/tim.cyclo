@@ -1,0 +1,2 @@
+../Src/tim.c:7:6:tim_timebase_init	1
+../Src/tim.c:24:6:TIM3_IRQHandler	1

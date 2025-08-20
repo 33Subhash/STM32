@@ -18,3 +18,7 @@
 2025-08-20 13:05:17,970 [INFO] WebApp:191 - Connection restablished
 2025-08-20 14:00:46,309 [INFO] WebApp:194 - Connection lost
 2025-08-20 14:00:46,627 [INFO] WebApp:191 - Connection restablished
+2025-08-20 14:22:47,431 [INFO] WebApp:194 - Connection lost
+2025-08-20 14:22:47,739 [INFO] WebApp:191 - Connection restablished
+2025-08-20 14:46:00,979 [INFO] WebApp:194 - Connection lost
+2025-08-20 14:46:01,288 [INFO] WebApp:191 - Connection restablished

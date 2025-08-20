@@ -1,14 +1,21 @@
-12:28:47 **** Incremental Build of configuration Debug for project 18_SPI_DMA ****
+15:32:43 **** Incremental Build of configuration Debug for project 19_I2C ****
 make -j8 all 
-arm-none-eabi-size  18_SPI_DMA.elf 
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Inc -I"C:/Users/subha/OneDrive/Documents/STM32_Reference/STM_WorkSpace/19_I2C/Drivers/CMSIS/Include" -I"C:/Users/subha/OneDrive/Documents/STM32_Reference/STM_WorkSpace/19_I2C/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/subha/OneDrive/Documents/STM32_Reference/STM_WorkSpace/19_I2C/Drivers/STM32L4xx_HAL_Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "19_I2C.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\subha\OneDrive\Documents\STM32_Reference\STM_WorkSpace\19_I2C\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="19_I2C.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 19_I2C.elf
+ 
+arm-none-eabi-size  19_I2C.elf 
+arm-none-eabi-objdump -h -S 19_I2C.elf  > "19_I2C.list"
    text	   data	    bss	    dec	    hex	filename
-   6832	     24	   1824	   8680	   21e8	18_SPI_DMA.elf
+   5536	     24	   1800	   7360	   1cc0	19_I2C.elf
 Finished building: default.size.stdout
  
-12:30:33 **** Incremental Build of configuration Debug for project 18_SPI_DMA ****
+Finished building: 19_I2C.list
+ 
+15:34:34 **** Incremental Build of configuration Debug for project 19_I2C ****
 make -j8 all 
-arm-none-eabi-size  18_SPI_DMA.elf 
+arm-none-eabi-size  19_I2C.elf 
    text	   data	    bss	    dec	    hex	filename
-   6832	     24	   1824	   8680	   21e8	18_SPI_DMA.elf
+   5536	     24	   1800	   7360	   1cc0	19_I2C.elf
 Finished building: default.size.stdout
  
