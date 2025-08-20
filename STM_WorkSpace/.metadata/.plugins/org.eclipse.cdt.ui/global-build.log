@@ -1,7 +1,14 @@
-10:44:56 **** Incremental Build of configuration Debug for project 16_SPI_Polling ****
+12:28:47 **** Incremental Build of configuration Debug for project 18_SPI_DMA ****
 make -j8 all 
-arm-none-eabi-size  16_SPI_Polling.elf 
+arm-none-eabi-size  18_SPI_DMA.elf 
    text	   data	    bss	    dec	    hex	filename
-   5272	     24	   1680	   6976	   1b40	16_SPI_Polling.elf
+   6832	     24	   1824	   8680	   21e8	18_SPI_DMA.elf
+Finished building: default.size.stdout
+ 
+12:30:33 **** Incremental Build of configuration Debug for project 18_SPI_DMA ****
+make -j8 all 
+arm-none-eabi-size  18_SPI_DMA.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6832	     24	   1824	   8680	   21e8	18_SPI_DMA.elf
 Finished building: default.size.stdout
  

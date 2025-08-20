@@ -1368,3 +1368,6 @@ java.lang.Exception: Resource '/15_SPI_Polling' does not exist.
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-08-20 10:47:09.963
 !MESSAGE Indexed '17_SPI_Interrupt' (26 sources, 138 headers) in 1.87 sec: 13,062 declarations; 57,228 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0.24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-08-20 12:11:33.327
+!MESSAGE Indexed '18_SPI_DMA' (25 sources, 106 headers) in 1.72 sec: 10,384 declarations; 47,908 references; 7 unresolved inclusions; 650 syntax errors; 2,912 unresolved names (4.8%)
