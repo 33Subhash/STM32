@@ -1,0 +1,17 @@
+14:32:42 **** Incremental Build of configuration Debug for project 07_ADC_SingleConversion ****
+make -j8 all 
+arm-none-eabi-gcc "../Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Inc -I"C:/Users/subha/OneDrive/Documents/STM32_Reference/STM_WorkSpace/07_ADC_SingleConversion/Drivers/CMSIS/Include" -I"C:/Users/subha/OneDrive/Documents/STM32_Reference/STM_WorkSpace/07_ADC_SingleConversion/Drivers/CMSIS/Device/ST/STM32L4xx/Include" -I"C:/Users/subha/OneDrive/Documents/STM32_Reference/STM_WorkSpace/07_ADC_SingleConversion/Drivers/STM32L4xx_HAL_Driver/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Src/adc.d" -MT"Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/adc.o"
+arm-none-eabi-gcc -o "07_ADC_SingleConversion.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\subha\OneDrive\Documents\STM32_Reference\STM_WorkSpace\07_ADC_SingleConversion\STM32L476RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="07_ADC_SingleConversion.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 07_ADC_SingleConversion.elf
+ 
+arm-none-eabi-size  07_ADC_SingleConversion.elf 
+arm-none-eabi-objdump -h -S 07_ADC_SingleConversion.elf  > "07_ADC_SingleConversion.list"
+   text	   data	    bss	    dec	    hex	filename
+   8644	     12	   1748	  10404	   28a4	07_ADC_SingleConversion.elf
+Finished building: default.size.stdout
+ 
+Finished building: 07_ADC_SingleConversion.list
+ 
+
+14:32:43 Build Finished. 0 errors, 0 warnings. (took 1s.260ms)
+

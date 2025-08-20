@@ -1,0 +1,80 @@
+#include <stdint.h>
+#include"STM32L4xx_hal.h"
+
+//Button = PC13 ,	BUS= AHB1
+//LED = PA5 ,		BUS= AHB1
+
+#define BTN_PORT 		GPIOC
+#define BTN_PIN 		GPIO_PIN_13
+
+#define LED_PORT		GPIOA
+#define LED_PIN			GPIO_PIN_5
+
+
+void pc13_btn_init(void);
+void pa5_led_init(void);
+
+
+uint8_t buttonStatus ;
+
+int main(void)
+{
+
+
+	HAL_Init();
+
+
+
+	//Configuring LED pin as output
+	pa5_led_init();
+
+	//Configuring LED pin as output
+	pc13_btn_init();
+
+
+	while(1){
+		buttonStatus= HAL_GPIO_ReadPin ( GPIOC,BTN_PIN );
+		HAL_GPIO_WritePin ( GPIOA,  LED_PIN ,  buttonStatus);
+	}
+
+}
+
+
+
+void pc13_btn_init(void)
+
+{
+	//Configure LED as output
+	GPIO_InitTypeDef GPIO_initStruct={0};
+
+	__HAL_RCC_GPIOC_CLK_ENABLE();
+	GPIO_initStruct.Pin  = BTN_PIN ;
+	GPIO_initStruct.Mode = GPIO_MODE_INPUT;
+	GPIO_initStruct.Pull = GPIO_NOPULL ;
+	GPIO_initStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(GPIOC, &GPIO_initStruct);
+
+
+}
+
+
+void pa5_led_init(void){
+
+	//Configure LED as output
+	GPIO_InitTypeDef GPIO_initStruct={0};
+
+	__HAL_RCC_GPIOA_CLK_ENABLE();
+	GPIO_initStruct.Pin  = LED_PIN;
+	GPIO_initStruct.Mode = GPIO_MODE_OUTPUT_PP;
+	GPIO_initStruct.Pull = GPIO_NOPULL ;
+	GPIO_initStruct.Speed = GPIO_SPEED_FREQ_LOW;
+	HAL_GPIO_Init(GPIOA, &GPIO_initStruct);
+
+}
+
+void Systick_Handler(void )
+{
+	HAL_IncTick();
+}
+
+

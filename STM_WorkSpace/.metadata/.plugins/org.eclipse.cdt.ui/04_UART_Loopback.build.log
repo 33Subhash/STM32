@@ -1,0 +1,10 @@
+12:00:41 **** Incremental Build of configuration Debug for project 04_UART_Loopback ****
+make -j8 all 
+arm-none-eabi-size  04_UART_Loopback.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9792	    104	   2048	  11944	   2ea8	04_UART_Loopback.elf
+Finished building: default.size.stdout
+ 
+
+12:00:41 Build Finished. 0 errors, 0 warnings. (took 204ms)
+

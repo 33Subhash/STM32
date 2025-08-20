@@ -1,0 +1,6 @@
+1755663886956	Delete resource '15_Mem_to_Mem_DMA2/Src/main.c'
+1755663985251	Delete resource '15_Mem_to_Mem_DMA2'
+1755665646559	Rename resource '15_SPI_Polling'
+1755665750183	Delete resource '16_SPI_Polling/Drivers/STM32L4xx_HAL_Driver/stm32l4xx_ll_spi.h'
+1755665755562	Delete resource '16_SPI_Polling/Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_spi.h'
+1755665760035	Delete resource '16_SPI_Polling/Drivers/STM32L4xx_HAL_Driver/stm32l4xx_hal_spi_ex.h'

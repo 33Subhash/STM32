@@ -1,0 +1,70 @@
+#include "stm32l4xx_hal.h"
+#include "adc.h"
+
+#define BTN_PORT 		GPIOC
+#define BTN_PIN 		GPIO_PIN_13
+
+#define LED_PORT		GPIOA
+#define LED_PIN			GPIO_PIN_5
+
+uint32_t sensor_value ;
+
+ADC_HandleTypeDef hadc1 ;
+
+int main(void)
+{
+    HAL_Init();
+
+
+    while (1)
+    {
+
+    }
+}
+
+void SysTick_Handler(void)
+{
+    HAL_IncTick();
+}
+
+void gpio_pc13_interrupt_init(void ){
+	//Configure LED as output
+		GPIO_InitTypeDef GPIO_initStruct={0};
+
+		__HAL_RCC_GPIOC_CLK_ENABLE();
+		__HAL_RCC_GPIOA_CLK_ENABLE();
+
+		//Configure PC13
+
+		GPIO_initStruct.Pin  = BTN_PIN ;
+		GPIO_initStruct.Mode = GPIO_MODE_IT_RISING;
+		GPIO_initStruct.Pull = GPIO_NOPULL ;
+		GPIO_initStruct.Speed = GPIO_SPEED_FREQ_LOW;
+		HAL_GPIO_Init(GPIOC, &GPIO_initStruct);
+
+		//Configure PA5
+
+		GPIO_initStruct.Pin  = LED_PIN;
+		GPIO_initStruct.Mode = GPIO_MODE_OUTPUT_PP;
+		GPIO_initStruct.Pull = GPIO_NOPULL ;
+		GPIO_initStruct.Speed = GPIO_SPEED_FREQ_LOW;
+		HAL_GPIO_Init(GPIOA, &GPIO_initStruct);
+
+		//Configure EXIT
+		HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0 , 0);
+		HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t  GPIO_Pin){
+
+	HAL_GPIO_TogglePin(LED_PORT, LED_PIN);
+
+}
+
+void EXTI15_10_IRQHandler(void){
+
+	HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
+}
+
+

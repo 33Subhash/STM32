@@ -1,0 +1,50 @@
+2025-08-12 11:01:39,758 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2025-08-12 11:01:42,247 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=false
+2025-08-12 11:01:43,882 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2025-08-12 11:05:46,616 [INFO] MainUpdater:2872 - connection check result : 10
+2025-08-12 11:05:46,736 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-08-12 11:05:46,740 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2025-08-12 11:05:46,740 [INFO] FinderPluginLoader:96 - Searching for filters in installed packs
+2025-08-12 11:05:49,285 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2025-08-12 11:05:49,285 [INFO] DetailPanel:341 - Set advertising image to C:/Users/subha/STM32Cube/Repository/\en.2400x1350px.jpeg
+2025-08-12 11:05:54,774 [INFO] MultiScanPanel:200 - Auto-refresh data requested => check proxy status ongoing
+2025-08-12 11:05:54,864 [INFO] LoadUrlFilesThread:185 - End of LoadServerUrlFiles without Thread
+2025-08-12 11:05:54,864 [INFO] DetailPanel:341 - Set advertising image to C:/Users/subha/STM32Cube/Repository/\en.2400x1350px.jpeg
+2025-08-12 11:06:06,648 [INFO] ApiDb:581 - Connected to CubeFinder SQLite database (C:\Users\subha\.stmcufinder\plugins\mcufinder\mcu\cube-finder-db.db)
+2025-08-12 11:07:05,923 [INFO] McuFinderGlobals:76 - Set McuFinderConnectedMode to true
+2025-08-12 11:07:05,929 [INFO] ApiDb:448 - Save user favorites file C:\Users\subha/.stm32cubeide/favorites.mcus.txt: 0 item(s)
+2025-08-12 11:07:05,930 [INFO] ApiDb:452 - User favorites MCUs=[]
+2025-08-12 11:07:05,932 [INFO] ApiDb:448 - Save user favorites file C:\Users\subha/.stm32cubeide/favorites.boards.txt: 0 item(s)
+2025-08-12 11:07:05,932 [INFO] ApiDb:452 - User favorites Boards=[]
+2025-08-12 11:35:21,195 [INFO] WebApp:194 - Connection lost
+2025-08-12 11:35:21,491 [INFO] WebApp:191 - Connection restablished
+2025-08-12 12:32:54,565 [INFO] WebApp:194 - Connection lost
+2025-08-12 12:32:54,910 [INFO] WebApp:191 - Connection restablished
+2025-08-12 14:07:52,209 [INFO] WebApp:194 - Connection lost
+2025-08-12 14:07:52,546 [INFO] WebApp:191 - Connection restablished
+2025-08-12 14:34:18,952 [INFO] WebApp:194 - Connection lost
+2025-08-12 14:34:19,280 [INFO] WebApp:191 - Connection restablished
+2025-08-12 15:34:20,732 [INFO] WebApp:194 - Connection lost
+2025-08-12 15:34:21,052 [INFO] WebApp:191 - Connection restablished
+2025-08-12 16:14:53,111 [INFO] WebApp:194 - Connection lost
+2025-08-12 16:14:53,465 [INFO] WebApp:191 - Connection restablished
+2025-08-12 16:16:54,015 [INFO] WebApp:194 - Connection lost
+2025-08-12 16:16:54,463 [INFO] WebApp:191 - Connection restablished
+2025-08-12 16:56:08,821 [INFO] WebApp:194 - Connection lost
+2025-08-12 16:56:09,058 [INFO] WebApp:191 - Connection restablished
+2025-08-12 17:07:02,705 [INFO] WebApp:194 - Connection lost
+2025-08-12 17:07:03,034 [INFO] WebApp:191 - Connection restablished
+2025-08-12 18:24:46,532 [INFO] WebApp:194 - Connection lost
+2025-08-12 18:24:46,815 [INFO] WebApp:191 - Connection restablished
+2025-08-12 18:28:28,466 [INFO] WebApp:194 - Connection lost
+2025-08-12 18:28:28,787 [INFO] WebApp:191 - Connection restablished
+2025-08-12 18:35:45,948 [INFO] WebApp:194 - Connection lost
+2025-08-12 18:35:47,270 [INFO] WebApp:191 - Connection restablished
+2025-08-12 19:35:47,459 [INFO] WebApp:194 - Connection lost
+2025-08-12 19:35:47,787 [INFO] WebApp:191 - Connection restablished
+2025-08-12 20:43:40,431 [INFO] WebApp:194 - Connection lost
+2025-08-12 20:47:42,623 [INFO] WebApp:191 - Connection restablished
+2025-08-12 20:47:47,883 [INFO] WebApp:194 - Connection lost
+2025-08-12 20:47:48,133 [INFO] WebApp:191 - Connection restablished
+2025-08-12 22:08:02,881 [INFO] WebApp:194 - Connection lost
+2025-08-12 22:08:03,228 [INFO] WebApp:191 - Connection restablished

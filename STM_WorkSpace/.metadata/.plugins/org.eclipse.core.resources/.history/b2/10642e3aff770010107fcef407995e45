@@ -1,0 +1,27 @@
+#include "stm32l4xx_hal.h"
+
+#define LED_PIN		GPIO_PIN_5
+#define LED_PORT	GPIOA
+
+void led_init(void);
+
+uint32_t sensor_value ;
+
+int main(void)
+{
+    HAL_Init();
+    adc_init_start();
+
+    while (1)
+    {
+    	sensor_value =pc0_adc_read();
+    	HAL_Delay(10);
+
+    }
+}
+
+void SysTick_Handler(void)
+{
+    HAL_IncTick();
+}
+
