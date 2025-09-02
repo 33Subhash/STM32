@@ -1,0 +1,41 @@
+/*
+ * stm32l4xx_driver_spi.h
+ *
+ *  Created on: Aug 28, 2025
+ *      Author: subha
+ */
+
+#ifndef INC_STM32L4XX_SPI_DRIVER_H_
+#define INC_STM32L4XX_SPI_DRIVER_H_
+
+/*
+ * Configuration register for SPI
+ */
+
+typedef struct
+{
+    uint8_t SPI_DeviceMode;       /*!< Master or Slave @SPI_DeviceMode */
+    uint8_t SPI_BusConfig;        /*!< Full-Duplex, Half-Duplex, or Simplex RX only @SPI_BusConfig */
+    uint8_t SPI_SclkSpeed;        /*!< Serial clock speed (prescaler) @SPI_SclkSpeed */
+    uint8_t SPI_DFF;              /*!< Data frame format: 8-bit / 16-bit @SPI_DFF */
+    uint8_t SPI_CPOL;             /*!< Clock polarity: Low/High @SPI_CPOL */
+    uint8_t SPI_CPHA;             /*!< Clock phase: First/Second edge @SPI_CPHA */
+    uint8_t SPI_SSM;              /*!< Software slave management enable/disable @SPI_SSM */
+
+} SPI_Config_t;
+
+/*
+ * Handle Structure of SPIx peripheral
+ */
+
+typedef struct
+{
+    SPI_RegDef_t *pSPIx;          /*!< Holds base address of SPIx (SPI1, SPI2, etc.) */
+    SPI_Config_t SPIConfig;       /*!< Holds SPI configuration settings */
+
+}SPI_Handle_t;
+
+
+
+
+#endif /* INC_STM32L4XX_SPI_DRIVER_H_ */

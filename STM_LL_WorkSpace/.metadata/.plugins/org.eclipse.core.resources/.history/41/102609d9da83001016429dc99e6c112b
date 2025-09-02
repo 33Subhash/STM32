@@ -1,0 +1,77 @@
+/*
+ * stm32l4xx_driver_spi.h
+ *
+ *  Created on: Aug 28, 2025
+ *      Author: subhash
+ */
+
+#ifndef INC_STM32L4XX_SPI_DRIVER_H_
+#define INC_STM32L4XX_SPI_DRIVER_H_
+
+#include<stdint.h>
+
+
+/*
+ * Configuration register for SPI
+ */
+
+typedef struct
+{
+    uint8_t SPI_DeviceMode;       /*!< Master or Slave @SPI_DeviceMode */
+    uint8_t SPI_BusConfig;        /*!< Full-Duplex, Half-Duplex, or Simplex RX only @SPI_BusConfig */
+    uint8_t SPI_SclkSpeed;        /*!< Serial clock speed (prescaler) @SPI_SclkSpeed */
+    uint8_t SPI_DFF;              /*!< Data frame format: 8-bit / 16-bit @SPI_DFF */
+    uint8_t SPI_CPOL;             /*!< Clock polarity: Low/High @SPI_CPOL */
+    uint8_t SPI_CPHA;             /*!< Clock phase: First/Second edge @SPI_CPHA */
+    uint8_t SPI_SSM;              /*!< Software slave management enable/disable @SPI_SSM */
+
+} SPI_Config_t;
+
+/*
+ * Handle Structure of SPIx peripheral
+ */
+
+typedef struct
+{
+    SPI_RegDef_t *pSPIx;          /*!< Holds base address of SPIx (SPI1, SPI2, etc.) */
+    SPI_Config_t SPIConfig;       /*!< Holds SPI configuration settings */
+
+}SPI_Handle_t;
+
+
+
+
+//***********APIs supported by  the driver**************
+
+//peripheral clock setup
+void SPI_PeriClockControl(SPI_RegDef_t *pSPIx,uint8_t EnorDi);
+
+/*
+ * init and de-init gpio
+ */
+
+
+void SPI_Init(SPI_Handle_t *pSPIHandle);
+void SPI_DeInit(SPI_RegDef_t *pSPIx);
+
+/*
+ * Data Send and Receive
+ *
+ */
+
+void SPI_SendData(SPI_RegDef_t *pSPIx , uint8_t  *pTxBuffer , uint32_t Len );
+void SPI_ReceiveData(SPI_RegDef_t *pSPIx , uint32_t Len );
+
+/*
+ * IRQ Configuration and ISR handling
+ */
+
+void SPI_IRQInterruptConfig(uint8_t IRQNumber , uint8_t EnorDi);
+void SPI_IRQPriorityConfig(uint8_t IRQNumber , uint32_t IRQPriority);
+void SPI_IRQHandling(SPI_Handle_t *pHandle );
+
+/*
+ * Other peripheral Control APIs
+ */
+
+#endif /* INC_STM32L4XX_SPI_DRIVER_H_ */

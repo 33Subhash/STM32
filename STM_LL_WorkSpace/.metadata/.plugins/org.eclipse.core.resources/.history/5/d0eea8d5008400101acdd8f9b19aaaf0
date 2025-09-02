@@ -1,0 +1,134 @@
+/*
+ * stm32l4xx_spi_driver.c
+ *
+ *  Created on: Aug 28, 2025
+ *      Author: subha
+ */
+
+#include"stm32l4xx_spi_driver.h"
+
+/*
+ *	Peripheral clock setup
+ */
+
+void SPI_PeriClockControl(SPI_RegDef_t *pSPIx,uint8_t EnorDi){
+
+	if(EnorDi == ENABLE ){
+
+			if(pSPIx == SPI1 ){
+				SPI1_PCLK_EN();
+
+			}else if(pSPIx == SPI2 ){
+				SPI2_PCLK_EN();
+
+			}else if(pSPIx == SPI3 ){
+				SPI3_PCLK_EN();
+
+			}
+
+		}else{
+
+			if(pSPIx == SPI1 ){
+				GPIOA_PCLK_DI();
+
+			}else if(pSPIx == SPI2 ){
+				GPIOB_PCLK_DI();
+
+			}else if(pSPIx == SPI3 ){
+				GPIOC_PCLK_DI();
+
+			}
+		}
+}
+
+void SPI_Init(SPI_Handle_t *pSPIHandle)
+{
+
+	uint32_t tempreg = 0;
+
+	//1.Configure the device mode
+	tempreg |= pSPIHandle->SPIConfig.SPI_DeviceMode << 2 ;
+
+	//2.Configure the bus config
+
+	if(pSPIHandle->SPIConfig.SPI_BusConfig == SPI_BUS_CONFIG_FD ){
+		//bidi mode cleared
+		tempreg &=~( 1<<15 );
+
+	}else if(pSPIHandle->SPIConfig.SPI_BusConfig == SPI_BUS_CONFIG_HD){
+		//budi mode is set
+		tempreg |= (1<<15 );
+
+	}else if(pSPIHandle->SPIConfig.SPI_BusConfig == SPI_BUS_CONFIG_SIMPLEX_RX){
+
+		//BIDI mode should be cleared
+		tempreg &=~(1<<15);
+		//RXONLY bit must be set
+		tempreg |=(1<<10);
+	}
+
+	//3.Configure the spi serial clock speed
+	tempreg |= pSPIHandle->SPIConfig.SPI_SclkSpeed << 3 ;
+
+	//4.Configure the DFF
+	tempreg |= pSPIHandle->SPIConfig.SPI_DFF << 11;
+
+	//5.Configure the CPOL
+	tempreg |= pSPIHandle->SPIConfig.SPI_CPOL << 1 ;
+
+	//6.Configure the CPHA
+	tempreg |= pSPIHandle->SPIConfig.SPI_CPHA << 0 ;
+
+	pSPIHandle->pSPIx->SPI_CR1 = tempreg ;
+
+
+}
+
+
+/*********************************************************************
+ * @fn      		  - SPI_DeInit
+ *
+ * @brief             - De-initializes (resets) the given SPI peripheral
+ *
+ * @param[in]         - pSPIx : Base address of the SPI peripheral (SPI1, SPI2, SPI3)
+ *
+ * @return            - None
+ *
+ * @Note              - Uses peripheral reset macros defined in MCU-specific header
+ *********************************************************************/
+void SPI_DeInit(SPI_RegDef_t *pSPIx)
+{
+    if(pSPIx == SPI1)
+    {
+        SPI1_REG_RESET();
+    }
+    else if(pSPIx == SPI2)
+    {
+        SPI2_REG_RESET();
+    }
+    else if(pSPIx == SPI3)
+    {
+        SPI3_REG_RESET();
+    }
+}
+
+uint8_t SPI_GetFlagStatus(SPI_RegDef_t *pSPIx  , uint32_t FlagName ){
+
+	if(pSPIx->SPI_SR & FlagName ){
+		return FLAG_SET ;
+	}
+
+	return FLAG_RESET ;
+}
+
+
+
+void SPI_SendData(SPI_RegDef_t *pSPIx , uint8_t *pTxBuffer , uint32_t Len ){
+
+	while(Len > 0 ){
+		//wait untill TXE is set
+		while(SPI_GetFlagStatus(pSPIx , SPI_TXE_FLAG ) == FLAG_RESET );
+
+	}
+
+}

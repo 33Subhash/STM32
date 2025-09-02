@@ -1,0 +1,296 @@
+/*
+ * stm32l4xx_gpio_driver.c
+ *
+ *  Created on: Aug 22, 2025
+ *      Author: subhash
+ */
+
+#include"stm32l4xx_gpio_driver.h"
+
+#define ENABLE 			1
+#define DISABLE 		0
+#define SET 			ENABLE
+#define RESET 			DISABLE
+#define GPIO_PIN_SET 	SET
+#define GPIO_PIN_RESET 	RESET
+
+/*
+ * peripheral clock setup
+ */
+
+
+/**
+  ******************************************************************************
+  * @fn           - GPIO_Init
+  *
+  * @brief        -
+  *
+  * @param[in]    -
+  * @param[in]    -
+  * @param[in]    -
+  *
+  * @return       -
+  *
+  * @Note         -
+  ******************************************************************************
+  */
+
+
+
+void GPIO_PeriClockControl(GPIO_RegDef_t *pGPIOx,uint8_t EnorDi){
+
+	if(EnorDi == ENABLE ){
+
+		if(pGPIOx == GPIOA ){
+			GPIOA_PCLK_DI();
+
+		}else if(pGPIOx == GPIOB ){
+			GPIOB_PCLK_DI();
+
+		}else if(pGPIOx == GPIOC ){
+			GPIOC_PCLK_DI();
+
+		}else if(pGPIOx == GPIOD ){
+			GPIOD_PCLK_DI();
+
+		}else if(pGPIOx == GPIOE ){
+			GPIOE_PCLK_DI();
+
+		}else if(pGPIOx == GPIOF ){
+			GPIOF_PCLK_DI();
+
+		}else if(pGPIOx == GPIOE ){
+			GPIOE_PCLK_DI();
+
+		}else if(pGPIOx == GPIOF ){
+			GPIOF_PCLK_DI();
+		}
+
+	}else{
+
+		if(pGPIOx == GPIOA ){
+			GPIOA_PCLK_EN();
+
+		}else if(pGPIOx == GPIOB ){
+			GPIOB_PCLK_EN();
+
+		}else if(pGPIOx == GPIOC ){
+			GPIOC_PCLK_EN();
+
+		}else if(pGPIOx == GPIOD ){
+			GPIOD_PCLK_EN();
+
+		}else if(pGPIOx == GPIOE ){
+			GPIOE_PCLK_EN();
+
+		}else if(pGPIOx == GPIOF ){
+			GPIOF_PCLK_EN();
+
+		}else if(pGPIOx == GPIOE ){
+			GPIOE_PCLK_EN();
+
+		}else if(pGPIOx == GPIOF ){
+			GPIOF_PCLK_EN();
+		}
+	}
+}
+
+//init and de-init gpio
+
+
+/**
+  ******************************************************************************
+  * @fn           - GPIO_Init
+  *
+  * @brief        -
+  *
+  * @param[in]    -
+  * @param[in]    -
+  * @param[in]    -
+  *
+  * @return       -
+  *
+  * @Note         -
+  ******************************************************************************
+  */
+
+
+void GPIO_Init(GPIO_Handle_t *pGPIOHandle){
+
+}
+
+/**
+  ******************************************************************************
+  * @fn           - GPIO_Init
+  *
+  * @brief        -
+  *
+  * @param[in]    -
+  * @param[in]    -
+  * @param[in]    -
+  *
+  * @return       -
+  *
+  * @Note         -
+  ******************************************************************************
+  */
+
+void GPIO_DeInit(GPIO_RegDef_t *pGPIOx){
+
+}
+
+
+//APIs for reading and writing into/from gpio's
+
+/**
+  ******************************************************************************
+  * @fn           - GPIO_Init
+  *
+  * @brief        -
+  *
+  * @param[in]    -
+  * @param[in]    -
+  * @param[in]    -
+  *
+  * @return       -
+  *
+  * @Note         -
+  ******************************************************************************
+  */
+
+
+uint8_t GPIO_ReadFromInputPin(GPIO_RegDef_t *pGPIOx ,uint8_t  GPIO_PinNumber){
+
+}
+
+/**
+  ******************************************************************************
+  * @fn           - GPIO_Init
+  *
+  * @brief        -
+  *
+  * @param[in]    -
+  * @param[in]    -
+  * @param[in]    -
+  *
+  * @return       -
+  *
+  * @Note         -
+  ******************************************************************************
+  */
+
+
+uint16_t GPIO_ReadFromInputPort(GPIO_RegDef_t *pGPIOx){
+
+}
+
+/**
+  ******************************************************************************
+  * @fn           - GPIO_Init
+  *
+  * @brief        -
+  *
+  * @param[in]    -
+  * @param[in]    -
+  * @param[in]    -
+  *
+  * @return       -
+  *
+  * @Note         -
+  ******************************************************************************
+  */
+
+
+void GPIO_WriteToOutputPin(GPIO_RegDef_t *pGPIOx ,uint8_t  GPIO_PinNumber , uint32_t value){
+
+}
+
+/**
+  ******************************************************************************
+  * @fn           - GPIO_Init
+  *
+  * @brief        -
+  *
+  * @param[in]    -
+  * @param[in]    -
+  * @param[in]    -
+  *
+  * @return       -
+  *
+  * @Note         -
+  ******************************************************************************
+  */
+
+
+void GPIO_WriteToOutputPort(GPIO_RegDef_t *pGPIOx , uint32_t value){
+
+}
+
+/**
+  ******************************************************************************
+  * @fn           - GPIO_Init
+  *
+  * @brief        -
+  *
+  * @param[in]    -
+  * @param[in]    -
+  * @param[in]    -
+  *
+  * @return       -
+  *
+  * @Note         -
+  ******************************************************************************
+  */
+
+
+void GPIO_ToggleOutputPin(GPIO_RegDef_t *pGPIOx ,uint8_t  GPIO_PinNumber){
+
+}
+
+//APIs for IRQ configuration  and  handling
+
+/**
+  ******************************************************************************
+  * @fn           - GPIO_Init
+  *
+  * @brief        -
+  *
+  * @param[in]    -
+  * @param[in]    -
+  * @param[in]    -
+  *
+  * @return       -
+  *
+  * @Note         -
+  ******************************************************************************
+  */
+
+void GPIO_IRQConfig(uint8_t IRQNumber,uint8_t IRQPriority , uint8_t EnorDi){
+
+}
+
+
+
+/**
+  ******************************************************************************
+  * @fn           - GPIO_Init
+  *
+  * @brief        -
+  *
+  * @param[in]    -
+  * @param[in]    -
+  * @param[in]    -
+  *
+  * @return       -
+  *
+  * @Note         -
+  ******************************************************************************
+  */
+
+
+void GPIO_IRQHandling(uint8_t GPIO_PinNumber){
+
+
+}
+
+
